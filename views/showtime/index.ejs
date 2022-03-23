@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs')%>
+<main>    
+    <div class = "">
+        <%if(showtimes.length.length){%>
+            <p>Technology</p>
+            <%showtimes.forEach(showtime=>{%>
+                <%if(showtime.topic === 'Technology'){%>
+                    <a href = '/<%= showtime.id%>'><p><%= showtime.title%></p></a><br>
+                <%}%>
+            <% });
+            
+        }%>
+
+        <%if(showtimes.length){%>
+            <p>Sports</p>
+            <%showtimes.forEach(showtime=>{%>
+                <%if(showtime.topic === 'Sports'){%>
+                    <a href = '/<%= showtime.id%>'><p><%= showtime.title%></p></a><br>
+                <%}%>
+            <% });
+            
+        }%>
+
+        <%if(showtimes.length===0){%>
+            <p>There are no events to display.<br><br> Check back later </p>
+            
+        <%}%>
+    </div>
+</main> 
+        <%- include('../partials/footer.ejs')%>

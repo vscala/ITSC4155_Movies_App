@@ -1,0 +1,17 @@
+<%- include('../partials/header.ejs')%>
+        
+        
+        <main>
+            <p><img src=<%= showtime.url%> alt="logo"><%= showtime.title%> 
+            </p>
+            <p>Hosted by <%= showtime.host%></p>
+            <p><%= showtime.date%></p>
+            <p><%= showtime.start%> - <%= showtime.end%></p>
+            <p>Location: <%= showtime.location%></p>
+            <p><%= showtime.details%></p>
+            <form action="index.ejs">
+                <button type="submit" formmethod = "GET" formaction = "/<%= showtime.id%>/edit">Edit</button>
+                <button type="submit" formmethod = "POST" formaction = "/<%= showtime.id%>?_method=DELETE">Delete</button>
+            </form>
+        </main>
+<%- include('../partials/footer.ejs')%>

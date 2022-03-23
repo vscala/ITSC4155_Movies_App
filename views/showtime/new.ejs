@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs')%>
+        <main>
+            <form action='/' method = 'POST'>
+                <ul>
+                    <li>
+                        <label for="eventName">Event:</label>
+                        <input type="text" id="eventName" name="eventName">
+                    </li>
+                    <li>
+                        <label for="genre">Genre:</label>
+                        <input type="text" id="genre" name="genre">
+                    </li>
+                    <li>
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location">
+                    </li>
+                    <li>
+                        <label for="details">Details:</label>
+                        <textarea id="dtails" name="details"></textarea>
+                    </li>                   
+                    <li>
+                        <label for="date">When:</label>
+                        <input type="date" placeholder="mm-dd-yyyy" id="date" name="date">
+                    </li>
+                    <li>
+                        <label for="start">Start:</label>
+                        <input type="time" id="start" name="start">
+                    </li>
+                    <li>
+                        <label for="end">End:</label>
+                        <input type="time" id="end" name="end">
+                    </li>
+                    <li>
+                        <label for="hostName">Host:</label>
+                        <input type="text" id="hostName" name="hostName">
+                    </li>
+                    <li>
+                        <label for="url">Image:</label>
+                        <input type="url" id="url" name="url"><br>
+                    </li>
+                </ul>
+            </form><br><br>
+            
+        </main>
+        <%- include('../partials/footer.ejs')%>

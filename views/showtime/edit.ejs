@@ -1,0 +1,45 @@
+<%- include('../partials/header.ejs')%>
+        <main>
+            <form method = "POST" action= "/<%= showtime.id%>?_method=PUT" >
+                <ul>
+                    <li>
+                        <label for="eventName">Event:</label>
+                        <input type="text" id="eventName" name="eventName" value = "<%= showtime.eventName%>">
+                    </li>
+                    <li>
+                        <label for="genre">Genre:</label>
+                        <input type="text" id="genre" name="genre" value = "<%= showtime.genre%>">
+                    </li>
+                    <li>
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" value = "<%= showtime.location%>">
+                    </li>
+                    <li>
+                        <label for="details">Details:</label>
+                        <textarea id="dtails" name="details"><%= showtime.details%></textarea>
+                    </li>
+                    <li>
+                        <label for="date">When:</label>
+                        <input type="date" id="date" placeholder="mm-dd-yyyy" name="date" value = "<%= showtime.date%>">
+                    </li>
+                    <li>
+                        <label for="start">Start:</label>
+                        <input type="time" id="start" name="start" value = "<%= showtime.start%>">
+                    </li>
+                    <li>
+                        <label for="end">End:</label>
+                        <input type="time" id="end" name="end" value = "<%= showtime.end%>">
+                    </li>
+                    <li>
+                        <label for="hostName">Host:</label>
+                        <input type="text" id="hostName" name="hostName" value = "<%= showtime.hostName%>">
+                    </li>
+                    <li>
+                        <label for="url">Image:</label>
+                        <input type="url" id="url" name="url" value = "<%= showtime.url%>"><br>
+                    </li>
+                </ul>
+            </form><br><br>
+            
+        </main>
+<%- include('../partials/footer.ejs')%>
