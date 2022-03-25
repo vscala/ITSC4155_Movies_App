@@ -34,11 +34,9 @@ UNCC_CALENDAR_URL = "https://campusevents.charlotte.edu/calendar"
 # Loads (or generates) and returns list of movies
 def loadMovies() -> List[dict]:
 	try:
-		t, movies = pickle.load(open(CACHEFILE, "rb"))
-		if time() >= t + EXPIRATION_TIME:
-			movies = scrapeMovies()
-			saveMovies(movies)
-	except (OSError, IOError) as e:
+		prevTime, movies = pickle.load(open(CACHEFILE, "rb"))
+		assert time() < prevTime + EXPIRATION_TIME
+	except (OSError, IOError, AssertionError) as e:
 		movies = scrapeMovies()
 		saveMovies(movies)
 	return movies
