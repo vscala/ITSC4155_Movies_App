@@ -1,10 +1,18 @@
 const express = require('express');
 const controller = require('../controllers/mainController');
 
-const mainRouter = express.Router();
+const router = express.Router();
 
-mainRouter.get('/', controller.index);
-/*mainRouter.get('/new', controller.new);*/
+router.get('/', controller.index);
 
-module.exports = mainRouter;
+//Added part
+router.get('/showtimes', controller.showtimes)
+router.get('/new', controller.new);
+router.post('/', controller.create);
+router.get('/:id', controller.show);
+router.get('/:id/edit', controller.edit);
+router.put('/:id', controller.update);
+router.delete('/:id', controller.delete);
+
+module.exports = router;
 

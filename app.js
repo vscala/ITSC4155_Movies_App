@@ -1,6 +1,5 @@
 const express = require('express');
 const mainRoutes = require('./routes/mainRoutes');
-const showtimeRoutes = require('./routes/showtimeRoutes');
 
 const app = express();
 
@@ -9,7 +8,6 @@ let host = 'localhost';
 app.set('view engine', 'ejs');
 
 app.use('/', mainRoutes);
-app.use('/showtimes', showtimeRoutes);
 
 app.use((req, res, next)=>{
     let err = new Error('The server cannot locate ' + req.url);
