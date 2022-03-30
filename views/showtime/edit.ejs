@@ -1,45 +1,62 @@
 <%- include('../partials/header.ejs')%>
         <main>
+            <div class="container mt-3">
             <form method = "POST" action= "/<%= showtime.id%>?_method=PUT" >
-                <ul>
+                <div class="mb-3 mt-3">
                     <li>
-                        <label for="eventName">Event:</label>
-                        <input type="text" id="eventName" name="eventName" value = "<%= showtime.eventName%>">
+                        <label for="eventName" class="form-label">Event:</label>
+                        <input class="form-control" type="text" id="eventName" name="eventName" value = "<%= showtime.eventName%>">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
-                        <label for="genre">Genre:</label>
-                        <input type="text" id="genre" name="genre" value = "<%= showtime.genre%>">
+                        <label for="genre" class="form-label">Genre:</label>
+                        <input class="form-control" type="text" id="genre" name="genre" value = "<%= showtime.genre%>">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
-                        <label for="location">Location:</label>
-                        <input type="text" id="location" name="location" value = "<%= showtime.location%>">
+                        <label for="location" class="form-label">Location:</label>
+                        <input class="form-control" type="text" id="location" name="location" value = "<%= showtime.location%>">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
-                        <label for="details">Details:</label>
-                        <textarea id="dtails" name="details"><%= showtime.details%></textarea>
+                        <label for="details" class="form-label">Details:</label>
+                        <textarea class="form-control" id="dtails" name="details"><%= showtime.details%></textarea>
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
-                        <label for="date">When:</label>
-                        <input type="date" id="date" placeholder="mm-dd-yyyy" name="date" value = "<%= showtime.date%>">
+                        <label for="date" class="form-label">When:</label>
+                        <input class="form-control" type="date" id="date" placeholder="mm-dd-yyyy" name="date" value = "<%= showtime.date%>">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
-                        <label for="start">Start:</label>
-                        <input type="time" id="start" name="start" value = "<%= showtime.start%>">
+                        <label for="start" class="form-label">Start:</label>
+                        <input class="form-control" type="time" id="start" name="start" value = "<%= showtime.start%>">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
-                        <label for="end">End:</label>
-                        <input type="time" id="end" name="end" value = "<%= showtime.end%>">
+                        <label for="end" class="form-label">End:</label>
+                        <input class="form-control" type="time" id="end" name="end" value = "<%= showtime.end%>">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">    
                     <li>
-                        <label for="hostName">Host:</label>
-                        <input type="text" id="hostName" name="hostName" value = "<%= showtime.hostName%>">
+                        <label for="hostName" class="form-label">Host:</label>
+                        <input class="form-control" type="text" id="hostName" name="hostName" value = "<%= showtime.hostName%>">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
-                        <label for="url">Image:</label>
-                        <input type="url" id="url" name="url" value = "<%= showtime.url%>"><br>
+                        <label for="url" class="form-label">Image:</label>
+                        <input class="form-control" type="url" id="url" name="url" value = "<%= showtime.url%>"><br>
                     </li>
-                </ul>
+                </div>
             </form><br><br>
-            
+        </div>
         </main>
 <%- include('../partials/footer.ejs')%>

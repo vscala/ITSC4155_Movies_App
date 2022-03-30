@@ -1,45 +1,62 @@
 <%- include('../partials/header.ejs')%>
         <main>
+            <div class="container mt-3">
             <form action='/' method = 'POST'>
-                <ul>
+                <div class="mb-3 mt-3">
                     <li>
                         <label for="eventName">Event:</label>
                         <input type="text" id="eventName" name="eventName">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
                         <label for="genre">Genre:</label>
                         <input type="text" id="genre" name="genre">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
                         <label for="location">Location:</label>
                         <input type="text" id="location" name="location">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
                         <label for="details">Details:</label>
                         <textarea id="dtails" name="details"></textarea>
-                    </li>                   
+                    </li>
+                </div> 
+                <div class="mb-3 mt-3">                 
                     <li>
                         <label for="date">When:</label>
                         <input type="date" placeholder="mm-dd-yyyy" id="date" name="date">
                     </li>
+                </div> 
+                <div class="mb-3 mt-3">
                     <li>
                         <label for="start">Start:</label>
                         <input type="time" id="start" name="start">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
                         <label for="end">End:</label>
                         <input type="time" id="end" name="end">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
                         <label for="hostName">Host:</label>
                         <input type="text" id="hostName" name="hostName">
                     </li>
+                </div>
+                <div class="mb-3 mt-3">
                     <li>
                         <label for="url">Image:</label>
                         <input type="url" id="url" name="url"><br>
                     </li>
-                </ul>
+                </div>
             </form><br><br>
-            
+        </div>
         </main>
         <%- include('../partials/footer.ejs')%>
