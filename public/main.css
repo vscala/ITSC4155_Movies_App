@@ -9,3 +9,17 @@
 .text-underline-hover:hover {
     text-decoration: underline;
 }
+
+main {
+    margin: 0;
+    padding: 10px;
+}
+
+.btn-container {
+    width: 100%;
+    text-align: center;
+}
+
+#edit-button {
+    margin-right: 50px;
+}

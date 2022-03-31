@@ -1,37 +1,20 @@
 <%- include('../partials/header.ejs')%>
 <main>    
     
-        <%if(showtimes.length){%>
-            <p>Mystery</p>
-            <%showtimes.forEach(showtime=>{%>
-                <div class="container">
-                    <ul class="list-group list-group-flush">
-                        <%if(showtime.genre === 'Mystery'){%>
-                            <li class="list-group-item"><a href = '/<%= showtime.id%>'><p><%= showtime.eventName%></p></a></li><br>
-                        <%}%>
-                    </ul>
-                </div>
-            <% });
-            
-        }%>
+    <% if (showtimes.length) { %>
+        <p>Select a showtime from the list:</p>
+        
+        <% for (i = 0; i < genres.length; i++) { %>
+            <p> <%= genres[i] %> </p>
+            <% for (x = 0; x < showtimes.length; x++) { %>
+                <% if (showtimes[x].genre === genres[i]) { %>
+                    <a href="/<%=showtimes[x].id%>"><p> <%= showtimes[x].eventName %> </p></a>
+            <%  } %>
+        <%  } %>
+    <%  } %>
 
-        <%if(showtimes.length){%>
-            <p>Studying</p>
-            <%showtimes.forEach(showtime=>{%>
-                <div class="container">
-                    <ul class="list-group list-group-flush">
-                        <%if(showtime.genre === 'Studying'){%>
-                            <li class="list-group-item"><a href = '/<%= showtime.id%>'><p><%= showtime.eventName%></p></a></li><br>
-                        <%}%>
-                    </ul>
-                </div>
-            <% });
-            
-        }%>
-
-        <%if(showtimes.length===0){%>
-            <p>There are no events to display.<br><br> Check back later </p>
-            
-        <%}%>
+    <%} else { %>
+        <p>There are no connections to display</p>
+<%  } %>
 </main> 
         <%- include('../partials/footer.ejs')%>

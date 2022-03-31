@@ -9,9 +9,9 @@
             <div class="text-center"><p><%= showtime.start%> - <%= showtime.end%></p></div>
             <div class="text-center"><p>Location: <%= showtime.location%></p></div>
             <div class="text-center"><p><%= showtime.details%></p></div>
-            <form action="showtimes.ejs">
-                <div class="btn-group" class="text-center" text-align="center">
-                    <button type="submit" class="btn btn-primary" formmethod = "GET" formaction = "/<%= showtime.id%>/edit">Edit</button>
+            <form action="showtimes.ejs" class="btn-container">
+                <div class="btn-group">
+                    <button id="edit-button" type="submit" class="btn btn-primary" formmethod = "GET" formaction = "/<%= showtime.id%>/edit">Edit</button>
                     <button type="submit" class="btn btn-primary" formmethod = "POST" formaction = "/<%= showtime.id%>?_method=DELETE">Delete</button>
                 </div>
             </form>
