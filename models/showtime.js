@@ -80,22 +80,18 @@ const showtimes = [
 
 
 
-exports.find = () => {
-    return showtimes;
-}
+exports.find = () => showtimes;
 
-exports.findByID = (id) => {
-    return showtimes.find(showtime => showtime.id == id);
-};
+exports.findByID = id => showtimes.find(showtime=>showtime.id === id);
 
-exports.save = (showtime) => {
+exports.save = function(showtime) {
     showtime.id = uuidv4();
     showtimes.push(showtime); 
-    console.log(showtimes);
+    console.log(showtime);
 };
 
-exports.updateByID = (id, newShowtime) => {
-    let showtime = showtimes.find(showtime => showtime.id == id);
+exports.updateByID = function(id, newShowtime) {
+    let showtime = showtimes.find(showtime => showtime.id === id);
 
     if (showtime) {
         showtime.eventName = newShowtime.eventName;
@@ -113,7 +109,7 @@ exports.updateByID = (id, newShowtime) => {
     }
 };
 
-exports.deleteByID = (id) => {
+exports.deleteByID = function(id) {
     let index = showtimes.findIndex(showtime => showtime.id == id);
     if (index != -1) {
         showtimes.splice(index, 1);

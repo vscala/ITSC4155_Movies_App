@@ -1,21 +1,21 @@
 <%- include('../partials/header.ejs')%>
 <main>    
     <div class = "">
-        <%if(showtimes.length.length){%>
-            <p>Technology</p>
+        <%if(showtimes.length){%>
+            <p>Mystery</p>
             <%showtimes.forEach(showtime=>{%>
-                <%if(showtime.topic === 'Technology'){%>
-                    <a href = '/<%= showtime.id%>'><p><%= showtime.title%></p></a><br>
+                <%if(showtime.genre === 'Mystery'){%>
+                    <a href = '/<%= showtime.id%>'><p><%= showtime.eventName%></p></a><br>
                 <%}%>
             <% });
             
         }%>
 
         <%if(showtimes.length){%>
-            <p>Sports</p>
+            <p>Studying</p>
             <%showtimes.forEach(showtime=>{%>
-                <%if(showtime.topic === 'Sports'){%>
-                    <a href = '/<%= showtime.id%>'><p><%= showtime.title%></p></a><br>
+                <%if(showtime.genre === 'Studying'){%>
+                    <a href = '/<%= showtime.id%>'><p><%= showtime.eventName%></p></a><br>
                 <%}%>
             <% });
             
