@@ -2,7 +2,13 @@
         
         
         <main>
-            <div class="image-size"><div class="text-center"><p><img class="rounded" width="300" height="300" src= <%= showtime.image%>></p></div></div>
+
+            <div class="image-size">
+                <div class="text-center">
+                    <img class="rounded" height="200" src= <%= showtime.image %> alt="Picture">
+                </div>
+            </div>
+
             <div class="text-center"><p><%= showtime.eventName%></p></div>
             <div class="text-center"><p>Hosted by <%= showtime.hostName%></p></div>
             <div class="text-center"><p>Date: <%= showtime.date%></p></div>
@@ -11,7 +17,7 @@
             <div class="text-center"><p><%= showtime.details%></p></div>
             <form action="showtimes.ejs" class="btn-container">
                 <div class="btn-group">
-                    <button id="edit-button" type="submit" class="btn btn-primary" formmethod = "GET" formaction = "/<%= showtime.id%>/edit">Edit</button>
+                    <!-- <button id="edit-button" type="submit" class="btn btn-primary" formmethod = "GET" formaction = "/<%= showtime.id%>/edit">Edit</button> -->
                     <button type="submit" class="btn btn-primary" formmethod = "POST" formaction = "/<%= showtime.id%>?_method=DELETE">Delete</button>
                 </div>
             </form>
