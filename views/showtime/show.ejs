@@ -3,10 +3,10 @@
         
         <main>
             <div class="image-size"><div class="text-center"><p><img class="rounded" width="300" height="300" src= <%= showtime.image%>></p></div></div>
-            <div class="text-center"><p><%= showtime.title%></p></div>
-            <div class="text-center"><p>Hosted by <%= showtime.host%></p></div>
-            <div class="text-center"><p><%= showtime.date%></p></div>
-            <div class="text-center"><p><%= showtime.start%> - <%= showtime.end%></p></div>
+            <div class="text-center"><p><%= showtime.eventName%></p></div>
+            <div class="text-center"><p>Hosted by <%= showtime.hostName%></p></div>
+            <div class="text-center"><p>Date: <%= showtime.date%></p></div>
+            <div class="text-center"><p>Time: <%= showtime.startTime%> - <%= showtime.endTime%></p></div>
             <div class="text-center"><p>Location: <%= showtime.location%></p></div>
             <div class="text-center"><p><%= showtime.details%></p></div>
             <form action="showtimes.ejs" class="btn-container">

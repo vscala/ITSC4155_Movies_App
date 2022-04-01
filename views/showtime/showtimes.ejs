@@ -6,10 +6,10 @@
         
         <% for (i = 0; i < genres.length; i++) { %>
             <p> <%= genres[i] %> </p>
-            <% for (x = 0; x < showtimes.length; x++) { %>
-                <% if (showtimes[x].genre === genres[i]) { %>
-                    <a href="/<%=showtimes[x].id%>"><p> <%= showtimes[x].eventName %> </p></a>
-            <%  } %>
+                    <% for (x = 0; x < showtimes.length; x++) { %>
+                        <% if (showtimes[x].genre === genres[i]) { %>
+                            <li class="list-group-item"><a href="/<%=showtimes[x].id%>"><p> <%= showtimes[x].eventName %> </p></a></li>
+                    <%  } %>
         <%  } %>
     <%  } %>
 

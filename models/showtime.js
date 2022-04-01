@@ -6,15 +6,15 @@ const {v4:uuidv4} = require('uuid');
 const showtimes = [
     {
         id: '1',
-        eventName: 'Shawshank Redemption',
-        genre: 'Mystery',
-        location: 'This is where the event will be',
-        details: 'Here are the event details',
-        date: 'This is the date',
-        startTime: 'This the start time',
-        endTime: 'This the end time',
-        hostName: 'Host Name',
-        image: 'Here goes an image'
+        eventName: 'Space Jam: A New Legacy',
+        genre: 'Comedy',
+        location: 'Popp Martin Student Union',
+        details: 'A rogue artificial intelligence kidnaps the son of famed basketball player LeBron James, who then has to work with Bugs Bunny to win a basketball game.',
+        date: 'April 1',
+        startTime: '8:00 pm',
+        endTime: '10:30 pm',
+        hostName: 'Popp Martin Student Union',
+        image: 'https://localist-images.azureedge.net/photos/39325038062560/big_square/26d29df776dff74618c22c7f4e201a839d06559f.jpg'
     },
     {
         id: '2',
