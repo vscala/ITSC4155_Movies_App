@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/', controller.index);
 router.get('/about', controller.about);
 router.get('/contact', controller.contact);
+router.get('/game', controller.game);
 
 //Added part
 router.get('/showtimes', controller.showtimes)

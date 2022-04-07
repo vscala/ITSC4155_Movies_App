@@ -22,6 +22,10 @@ exports.contact = (req, res) => {
     res.render('./contact');
 }
 
+exports.game = (req, res) => {
+    res.render('./game');
+};
+
 exports.create = (req, res) => {
     let showtime = req.body;
     model.save(showtime);
