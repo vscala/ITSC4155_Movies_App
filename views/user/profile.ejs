@@ -13,24 +13,27 @@
 
 
     <%if(rsvps.length) {%>
-        <p id="content2"><br>You have RSVP'd the following events</p><br>
-        <table id="rsvp">
+        <p><br>You have RSVP'd the following events</p><br>
+        <table class="table table-hover">
+            <thead>
                 <tr>
                     <th>Event name</th>
                     <th>RSVP Status</th>
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
-            
+            </thead>
+            <tbody>
         <%rsvps.forEach(rsvp => {%>
             <tr>
                 <td><%=rsvp.showtime.eventName%></td>
                 <td><%=rsvp.rsvp%></td>
                 <form>
-                    <td><button formmethod="get" formaction='/<%= rsvp.showtime._id%>/'>Update</button></p></a></td>
-                    <td><button formmethod="post" formaction='/<%= rsvp.showtime._id%>/rsvp?_method=DELETE'>Delete</button></p></a></td>
+                    <td><button class="btn btn-primary" formmethod="get" formaction='/<%= rsvp.showtime._id%>/'>Update</button></p></a></td>
+                    <td><button class="btn btn-danger" formmethod="post" formaction='/<%= rsvp.showtime._id%>/rsvp?_method=DELETE'>Delete</button></p></a></td>
                 </form>
             </tr>
+            </tbody>
             <br>
         <%})%> 
             

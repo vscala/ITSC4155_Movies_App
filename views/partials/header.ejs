@@ -37,7 +37,7 @@
 
         <% if(errorMessages.length > 0) {%>
             <% errorMessages.forEach(message=>{%>
-                <div class='error'>
+                <div class="alert alert-danger" style="text-align:center">
                     <%=message%>
                 </div>
             <%});%>
@@ -46,7 +46,7 @@
         <% if(successMessages.length > 0) {%>
 
             <% successMessages.forEach(message=>{%>
-                <div class='success'>
+                <div class="alert alert-success" style="text-align:center">
                     <%=message%>
                 </div>
             <%});%>

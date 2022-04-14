@@ -2,12 +2,11 @@
 <main>    
     
     
-
+<h1 style="text-align: center;">List of movies Available</h1>
     <%if(showtimes.length){%>
         <%showtimes.forEach(showtime=>{%>
                 <a href = '/<%= showtime.id%>'><p><%= showtime.eventName%></p></a><br>
-        <% });
-        
+        <% });       
     }%>
 </main> 
         <%- include('../partials/footer.ejs')%>
