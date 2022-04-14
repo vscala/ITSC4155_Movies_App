@@ -1,0 +1,42 @@
+<%- include('../partials/header.ejs')%>
+<div>
+    <h2>Welcome, <%=user.firstName + ' ' + user.lastName%></h2><br><br>
+    <%if(showtimes.length) {%>
+        <p>You have entered the following events</p><br>
+        <%showtimes.forEach(showtime => {%>
+            <a href='/<%= showtime.id%>'><p><%=showtime.eventName%></p></a><br>
+        <%})
+    } else {%> 
+        <p>You have not entered any events yet.</p>
+    <%}%>
+</div>  
+
+
+    <%if(rsvps.length) {%>
+        <p id="content2"><br>You have RSVP'd the following events</p><br>
+        <table id="rsvp">
+                <tr>
+                    <th>Event name</th>
+                    <th>RSVP Status</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            
+        <%rsvps.forEach(rsvp => {%>
+            <tr>
+                <td><%=rsvp.showtime.eventName%></td>
+                <td><%=rsvp.rsvp%></td>
+                <form>
+                    <td><button formmethod="get" formaction='/<%= rsvp.showtime._id%>/'>Update</button></p></a></td>
+                    <td><button formmethod="post" formaction='/<%= rsvp.showtime._id%>/rsvp?_method=DELETE'>Delete</button></p></a></td>
+                </form>
+            </tr>
+            <br>
+        <%})%> 
+            
+    </table>
+    <%} else {%>
+        <p>You have not created any RSVPs yet.</p>
+    <%}%>
+
+    <%- include('../partials/footer.ejs')%>
