@@ -32,3 +32,18 @@ main {
   text-align: center;
   text-transform: capitalize;
 }
+
+.form-group{
+    width: 20%; 
+    align-self: center;
+    margin:0 auto; 
+}
+
+.form-label{
+    align-items: center;
+}
+
+.justify-content-center button{
+    text-align: center;
+    margin-left: 925px ;
+}
