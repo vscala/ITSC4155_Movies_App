@@ -1,10 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width, 
+        initial-scale=1.0">
+        
+    
+</head>
+
 <%- include('./partials/header.ejs')%>
-<main>
-    <h1> Movie Game </h1>
-	<input class="letter-control" type="text" id="l1" name="l1" required>
-	<input class="letter-control" type="text" id="l1" name="l1" required>
-	<input class="letter-control" type="text" id="l1" name="l1" required>
-	<input class="letter-control" type="text" id="l1" name="l1" required>
-	<input class="letter-control" type="text" id="l1" name="l1" required>
-</main>   
+
+<body>
+    <center>
+		<h1> Movie Title Guessing Game </h1>
+		<div id="input_boxes"></div>
+		<input type="submit" value="Submit">
+    </center>
+  
+</body>
 <%- include('./partials/footer.ejs')%>
+<script>
+	/*
+		On start:
+			- Get random movie title TODO
+			- Generate text boxes for movie title TODO
+		
+		Game funcions:
+			- Function to check if movie title is valid TODO
+			- Submit box TODO
+			
+	*/
+	let word = 'The Godfather';
+	let mx = word.length;
+	let maxGuesses = mx;
+	
+	// Game variables
+	var guesses = 0;
+	
+	// Generate boxes for movie title
+	const box = document.getElementById('input_boxes');
+	for (let i = 0; i < word.length; i++) {
+		var temp = document.createElement('input');
+		temp.setAttribute('class', 'letter-control');
+		temp.setAttribute('type', 'text');
+		temp.setAttribute('id', 'l'+String(i));
+		temp.setAttribute('name', 'l'+String(i));
+		temp.setAttribute('onclick', 'buttonClick(\'l'+String(i)+'\')');
+		temp.setAttribute('oninput', 'buttonInput(\'l'+String(i)+'\')');
+		temp.setAttribute('required', '');
+		box.appendChild(temp);
+	}
+	
+	
+	function buttonInput(id) {
+		var next_id = 'l' + String((parseInt(id.substring(1))+1) % mx);
+		var next = document.getElementById(next_id);
+		next.focus();
+	    next.select();
+	}
+	function buttonClick(id) {
+		document.getElementById(id).select();
+	}
+</script>
+</html>
