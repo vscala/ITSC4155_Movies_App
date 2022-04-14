@@ -15,5 +15,8 @@ router.get('/:id', controller.show);
 // router.get('/:id/edit', controller.edit);
 router.put('/:id', controller.update);
 router.delete('/:id', controller.delete);
+router.post('/:id/rsvp', controller.editRsvp);
+router.delete('/:id/rsvp', controller.deleteRsvp);
+
 module.exports = router;
 

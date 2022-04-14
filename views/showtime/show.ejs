@@ -15,11 +15,22 @@
             <div class="text-center"><p>Time: <%= showtime.startTime%> - <%= showtime.endTime%></p></div>
             <div class="text-center"><p>Location: <%= showtime.location%></p></div>
             <div class="text-center"><p><%= showtime.details%></p></div>
-            <form action="showtimes.ejs" class="btn-container">
-                <div class="btn-group">
-                    <!-- <button id="edit-button" type="submit" class="btn btn-primary" formmethod = "GET" formaction = "/<%= showtime.id%>/edit">Edit</button> -->
-                    <button type="submit" class="btn btn-primary" formmethod = "POST" formaction = "/<%= showtime.id%>?_method=DELETE">Delete</button>
-                </div>
-            </form>
+
+            <% if(user==showtime.author){%>
+                <form action="showtimes.ejs" class="btn-container">
+                    <div class="btn-group">
+                        <!-- <button id="edit-button" type="submit" class="btn btn-primary" formmethod = "GET" formaction = "/<%= showtime.id%>/edit">Edit</button> -->
+                        <button type="submit" class="btn btn-primary" formmethod = "POST" formaction = "/<%= showtime.id%>?_method=DELETE">Delete</button>
+                    </div>
+                </form>
+            <%} else if(user && user!=showtime.author){%>
+                <form>
+                    <h5 id="h4"><%=rsvps%> People are going!</h5>
+                    <h4 id="h4">Are you planning to atttend? RSVP now!</h4>
+                    <button type="submit" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="YES">Yes</button>
+                    <button type="submit" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="NO">No</button>
+                    <button type="submit" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="MAYBE">Maybe</button>
+                </form>
+            <%}%>
         </main>
 <%- include('../partials/footer.ejs')%>
