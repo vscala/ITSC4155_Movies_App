@@ -15,8 +15,8 @@
 <body>
     <center>
 		<h1> Movie Title Guessing Game </h1>
-		<div id="input_boxes"></div>
-		<input type="submit" value="Submit">
+		<div id="input_boxes"></div> 
+		<input type="submit" onclick="checkWord()" value="Submit">
     </center>
   
 </body>
@@ -75,6 +75,16 @@
 		document.getElementById(id).select();
 	}
 	
+	function checkWord() {
+		for (let i = 0; i < word.length; i++) {
+			var temp = document.getElementById('l'+String(i));
+			if (temp.value.toUpperCase() === word[i].toUpperCase()) {
+				temp.disabled = true;
+				temp.style.color = "green";
+			}
+			console.log(temp.value, word[i]);
+		}
+	}
 	
 </script>
 </html>
