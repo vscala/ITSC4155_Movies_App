@@ -2,35 +2,35 @@
         
         
         <main>
-
+            </div>
+            <div class="text-center"><h1><%= showtime.eventName%></h1></div>
             <div class="image-size">
                 <div class="text-center">
-                    <img class="rounded" height="200" src= <%= showtime.image %> alt="Picture">
+                    <img class="rounded" height="286" src= <%= showtime.image %> alt="Picture">
                 </div>
-            </div>
-
-            <div class="text-center"><p><%= showtime.eventName%></p></div>
-            <div class="text-center"><p>Hosted by <%= showtime.hostName%></p></div>
-            <div class="text-center"><p>Date: <%= showtime.date%></p></div>
-            <div class="text-center"><p>Time: <%= showtime.startTime%> - <%= showtime.endTime%></p></div>
-            <div class="text-center"><p>Location: <%= showtime.location%></p></div>
-            <div class="text-center"><p><%= showtime.details%></p></div>
-
+            <div class="text-center"><h5>Hosted by <%= showtime.hostName%></h5></div>
+            <div class="text-center"><h5>Located at <%= showtime.location%></h5></div>
+            <div class="text-center"><h6>Date: <%= showtime.date%></h6></div>
+            <div class="text-center"><h6>Time: <%= showtime.startTime%> - <%= showtime.endTime%></h6></div>
+            <div class="text-center"><p>Event Details  :  <%= showtime.details%></p></div>
+            <div class="text-center">
             <% if(user==showtime.author){%>
                 <form action="showtimes.ejs" class="btn-container">
                     <div class="btn-group">
                         <!-- <button id="edit-button" type="submit" class="btn btn-primary" formmethod = "GET" formaction = "/<%= showtime.id%>/edit">Edit</button> -->
-                        <button type="submit" class="btn btn-primary" formmethod = "POST" formaction = "/<%= showtime.id%>?_method=DELETE">Delete</button>
+                        <button type="submit" class="homebutton" formmethod = "POST" formaction = "/<%= showtime.id%>?_method=DELETE">Delete Event</button>
                     </div>
                 </form>
             <%} else if(user && user!=showtime.author){%>
                 <form>
-                    <h5 id="h4"><%=rsvps%> People are going!</h5>
-                    <h4 id="h4">Are you planning to atttend? RSVP now!</h4>
-                    <button type="submit" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="YES">Yes</button>
-                    <button type="submit" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="NO">No</button>
-                    <button type="submit" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="MAYBE">Maybe</button>
+                    <h2>Attendance</h2>
+                    <h6 id="h5"><%=rsvps%> People are going!</h6>
+                    <h4 id="h4">Are you planning to atttend? RSVP here: </h4>
+                    <button type="submit" class="homebutton" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="YES">Yes I will attend</button>
+                    <button type="submit"  class="homebutton" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="NO">No I will not attend</button>
+                    <button type="submit"  class="homebutton" formmethod = "POST" formaction = "/<%= showtime.id%>/rsvp" name="rsvp" value="MAYBE">Maybe</button>
                 </form>
             <%}%>
+        </div>
         </main>
 <%- include('../partials/footer.ejs')%>

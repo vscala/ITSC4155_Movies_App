@@ -1,19 +1,19 @@
 <%- include('../partials/header.ejs')%>
 <div>
-    <h2>Welcome, <%=user.firstName + ' ' + user.lastName%></h2><br><br>
+    <h2>Welcome, <%=user.firstName%></h2><br>
     <%if(showtimes.length) {%>
-        <p>You have entered the following events</p><br>
+        <div class="rsvps"><p>You have entered the following events: </p></div>
         <%showtimes.forEach(showtime => {%>
-            <a href='/<%= showtime.id%>'><p><%=showtime.eventName%></p></a><br>
+    <div class="image-size">        
+        <a href = '/<%= showtime.id%>'><p><%= showtime.eventName%><img height="130" src= <%= showtime.image %> </p></a><br> </div>
         <%})
     } else {%> 
-        <p>You have not entered any events yet.</p>
+       <div class="rsvps"><p>You have not entered any events yet.</p></div> 
     <%}%>
 </div>  
 
-
     <%if(rsvps.length) {%>
-        <p><br>You have RSVP'd the following events</p><br>
+        <div class="rsvps"><p><br>You have RSVP'd the following events: </p><br></div>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -34,12 +34,11 @@
                 </form>
             </tr>
             </tbody>
-            <br>
         <%})%> 
             
     </table>
     <%} else {%>
-        <p>You have not created any RSVPs yet.</p>
+        <div class="rsvps"><p>You have not created any RSVPs yet.</p></div>
     <%}%>
 
     <%- include('../partials/footer.ejs')%>

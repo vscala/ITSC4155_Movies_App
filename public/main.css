@@ -24,6 +24,118 @@ main {
     margin-right: 50px;
 }
 
+.container-fluid{
+    overflow: hidden;
+    background-color: #0c164f ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.newForm {
+    width: 790px;
+    margin: auto;
+}
+
+.container-fluid a{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.088em;
+    font-weight: bold;
+    align-items: center;
+}
+
+.container-fluid li{
+    float: left;
+    color: #8a9590;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.088em;
+   
+    align-items: center;
+}
+.container-fluid li:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.container-fluid li.active {
+    color:white;
+}
+
+.image-size a {
+    float: fixed;
+    color: #0f0e0e;
+    text-align: fixed;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1.066em;
+}
+.rsvps p {
+    float: fixed;
+    color: #0f0e0e;
+    text-align: fixed;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+#welcomeMessage {
+    margin-right: 143px;
+}
+
+
+/*home page style*/
+.wrapper{
+    background-color: #f1f0f0;
+    
+}
+#pageintro{
+    padding: 200px 0 150px;
+}
+
+#pageintro article, #pageintro article p{
+    display:block;
+    max-width:75%;
+    margin:0 auto;
+    text-align:center;
+    color: black;
+    font-weight: bold}
+#pageintro article p{
+    max-width:65%;
+    line-height:2rem;
+    font-size: 1.25rem;
+}
+#pageintro .heading{
+    margin-bottom:20px;
+    font-size:4rem;}
+
+.homebutton{
+    text-decoration: none;
+    color: black;
+    font-size:1.25rem;
+    border: 2px solid #0c164f;
+    font-family: "Palatino Linotype", sans-serif;
+    padding: 3px;
+    background-color: rgb(190, 190, 190);
+    margin-bottom: 1px;
+
+}/* end of homepage style*/
+
+h1{
+    padding-top: 40px;
+    padding-bottom: 14px;
+    text-align: center;
+}
+
+h3{
+    padding-top: 40px;
+    padding-bottom: 14px;
+    text-align: center;    
+}
+
+
 .letter-control {
   background-color: white;
   width: 40px;
@@ -46,4 +158,28 @@ main {
 .justify-content-center button{
     text-align: center;
     margin-left: 925px ;
+}
+
+ /*ABOUT CSS*/
+ .aboutHours {
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: #333333;
+    margin-right: auto;
+
+}
+
+.about p {
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    color: #333333;
+
+}
+
+.about th {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
