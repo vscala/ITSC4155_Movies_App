@@ -20,68 +20,121 @@
 		<h4 id="guessed_letters"> None </h4>
 		<h3> Letters in Word: </h3>
 		<h4 id="valid_letters"> None </h4>
-		<input type="submit" onclick="checkWord()" value="Submit">
+		<input type="submit" onclick="checkWord()" value="Submit" id="submit_btn">
     </center>
   
 </body>
 <%- include('./partials/footer.ejs')%>
 <script>
-	const movies = ['Pulp Fiction', 'Fight Club', 'Inception', 'Forrest Gump', 'Goodfellas', 'Star Wars', 'The Matrix', 'City of God', 'City Lights', 'Casablanca', 'Rear Window', 'Modern Times', 'Psycho', 'Memento', 'The Pianist', 'The Departed', 'Gladiator', 'Alien', 'The Prestige', 'A Separation', 'The Shining', 'Das Boot', 'Citizen Kane', 'Vertigo', 'Aliens', 'Oldboy', 'Taxi Driver', 'Braveheart', 'The Kid', 'Yojimbo', 'Rashomon', 'The Sting', 'Ikiru', 'Amadeus', 'Metropolis', 'Snatch', 'The General', 'Raging Bull', 'Chinatown', 'Unforgiven', 'The Hunt', 'Downfall', 'Scarface', 'Toy Story', 'Die Hard', 'Rebecca', 'Gravity', 'Diabolique', 'Warrior', 'Blade Runner', 'Underground', 'The Avengers', 'Gran Torino', 'Incendies', 'Casino', 'Mary and Max', 'Hotel Rwanda', 'Persona', 'Fargo', 'Annie Hall', 'Network', 'Stalker', 'La Strada', 'The Thing', 'Sin City', 'Platoon', 'High Noon', 'Departures', 'Notorious', 'Finding Nemo', 'Stand by Me', 'Donnie Darko', 'Ip Man', 'Gandhi', 'La Haine', 'The Hustler', 'Barry Lyndon', 'Sleuth', 'The Killing', 'The Help', 'Solaris', 'Prisoners', 'Rio Bravo', 'Harvey', 'Elite Squad', 'Rocky', 'Duck Soup', 'The Graduate', 'Akira', 'Life of Pi', 'Papillon', 'Charade', 'Being There', 'Frozen', 'Patton', 'Sling Blade', 'Star Trek', 'Black Swan', 'Manhattan', 'Dogville', 'Big Fish', 'Brazil', 'Persepolis', 'The Artist', 'Talk to Her', 'Ratatouille', 'Magnolia', 'The Exorcist', 'Rain Man', 'Nosferatu', 'Frankenstein', 'Serenity', 'The Notebook', 'Mystic River', 'True Romance', 'In Bruges', 'Glory', 'King Kong', 'Spartacus', 'Breathless', 'The Killer', 'Aladdin', 'Hard Boiled', 'The Wrestler', 'Avatar', 'Freaks', 'Ed Wood', 'Crash', 'The Insider', 'A Prophet', 'Badlands', 'My Fair Lady', 'Nine Queens', 'The Fall', 'Iron Man', 'Shrek', 'The Fighter', 'Cabaret', 'Halloween', 'The Chorus', 'Taken', 'Clerks', 'Down by Law', 'Hot Fuzz', 'Office Space', 'Tangled', 'Black Book', 'Evil Dead II', 'About Time', 'Hamlet', 'Drive', 'Predator', 'Tombstone', 'In America', 'Fantasia', 'Amour', 'Hangover', 'Porco Rosso', 'Gattaca', 'Run Lola Run', 'Misery', 'Blue Velvet', 'Repulsion', 'Happiness', 'Dirty Harry', 'Atonement', 'October Sky', 'Apocalypto', 'Changeling', 'Goldfinger', 'Ghostbusters', 'The Fugitive', 'The Birds', 'Dark City', 'Deliverance', 'Skyfall', 'The Goonies', 'Sabrina', 'Serpico', 'Control', 'The Game', 'Delicatessen', 'Waking Life', 'Dead Man', 'Stardust', 'Rushmore', 'Mary Poppins', 'Zombieland', 'Man on Fire', 'Show Me Love', 'Barton Fink', 'A Bronx Tale', 'The Sandlot', 'Short Cuts', 'Match Point', 'Boy a', 'Detachment', 'Awakenings', 'Flipped', 'Paprika', 'Ponyo', 'Blood Simple', 'The Visitor', 'The Warriors', 'Grindhouse', 'Shine', 'True Grit', 'Malcolm X', 'Fearless', 'Billy Elliot', 'Lolita', 'Whale Rider', 'Coraline', 'Philadelphia', 'Training Day', 'Primal Fear', 'Titanic', 'The Player', 'After Hours', 'The Big Blue', 'Traffic', 'Cast Away', 'End of Watch', 'Spellbound', 'Lost Highway', 'Zodiac', 'Inside Man', 'Superbad', 'Dracula', 'Garden State', 'Munich', 'Seven Pounds', 'First Blood', 'Lord of War', 'Watchmen', 'Following', 'The Crow', 'The Others', 'Braindead', 'Volver', 'Disconnect', 'I Am Sam', 'Funny Games', 'Sideways', 'Cloud Atlas', 'Hoosiers', 'Robin Hood', 'Equilibrium', 'The Reader', 'The Abyss', 'Hunger', 'The Omen', 'Falling Down', 'Moneyball', 'Collateral', 'A Single Man', 'The Town', 'Midnight Run', 'The Piano', 'Ice Age', 'Batman', 'Headhunters', 'Pinocchio', 'The Natural', 'Tell No One', 'The Wave', 'The Hours', 'Straw Dogs', 'August Rush', 'Elizabeth', 'Marathon Man', 'Jackie Brown', 'Chaplin', 'Felon', 'Doubt', 'Quiz Show', 'Sleepers', 'Looper', 'Miracle', 'Best in Show', 'Robocop', 'The Fly', 'Open Range', 'Ghost World', 'Blue Jasmine', 'In the Loop', 'Brick', 'Clerks II', 'Witness', 'Babel', 'Transamerica', 'The Aviator', 'Lincoln', 'The Mission', 'Biutiful', 'Source Code', 'Total Recall', 'Bullitt', 'Mean Streets', 'Suspiria', 'Swingers', 'Take Shelter', 'Bound', 'Excalibur', 'Labyrinth', 'Mulan', 'Beetlejuice', 'Pirate Radio', 'True Grit', 'Eraserhead', 'Wonder Boys', 'The Queen', 'Capote', 'Chasing Amy', 'Precious', 'Vacation', 'Red Cliff', 'Bambi', 'Poltergeist', 'Corpse Bride', 'The Rock', 'Tootsie', 'Frida', 'Layer Cake', 'Irreversible', 'Limitless', 'Wall Street', 'Rounders', 'Rescue Dawn', 'Carrie', 'Heathers', 'Easy Rider', 'Home Alone', 'Jane Eyre', 'The Fountain', 'Quills', 'Caddyshack', 'Dogma', 'Angel Heart', 'Contact', 'Invictus', 'Peter Pan', 'Seabiscuit', 'Frailty', 'Superman', 'The Way Back', 'Closer', 'The Ring', 'Crazy Heart', 'Frequency', 'Sleeper', 'Rocknrolla', 'An Education', 'Videodrome', 'Dumbo', 'Flight', 'Megamind', 'Fish Tank', 'Gosford Park', 'Cinderella', 'Cape Fear', 'Chocolat', 'Sunshine', 'Monster', 'Rango'];
-	let rng = Math.floor(Math.random() * movies.length);
-	let word = movies[rng];
-	//console.log(word);
-	let mx = word.length;
-	let maxGuesses = mx;
 	
+	// DOM Elements
+	const textGuessed = document.getElementById('guessed_letters');
+	const textValid = document.getElementById('valid_letters');
+	const box = document.getElementById('input_boxes');
+    
 	// Game variables 
+	let movies = [];
+	let word = '';
+	let n = 0;
+	let maxGuesses = n;
 	var guesses = 0;
+	const guessedLetters = new Set();
+	const validLetters = new Set();
+	
+	async function getMovies() {
+		const response = await fetch("movies.json");
+		const json = await response.json();
+		movies = json.movies;
+		newGame();
+	}
+	
+	getMovies();
+	
+	// Set game variables to new values, reset page
+	function newGame() {
+		let rng = Math.floor(Math.random() * movies.length);
+		word = movies[rng].toUpperCase();
+		console.log(word);
+		n = word.length;
+		maxGuesses = n;
+		guesses = 0;
+		guessedLetters.clear();
+		validLetters.clear();
+		box.replaceChildren();
+		textGuessed.innerText = '';
+		textValid.innerText = '';
+		generateBoxes();
+	}
 	
 	// Generate boxes for movie title
-	const box = document.getElementById('input_boxes');
-	for (let i = 0; i < word.length; i++) {
-		var temp = document.createElement('input');
-		temp.setAttribute('class', 'letter-control');
-		temp.setAttribute('type', 'text');
-		temp.setAttribute('id', 'l'+String(i));
-		temp.setAttribute('name', 'l'+String(i));
-		temp.setAttribute('onclick', 'buttonClick(\'l'+String(i)+'\')');
-		temp.setAttribute('oninput', 'buttonInput(\'l'+String(i)+'\')');
-		temp.setAttribute('required', '');
-		if (word[i] == ' ') {
-			temp.disabled = true;
-			
+	function generateBoxes() {
+		for (let i = 0; i < word.length; i++) {
+			var newBox = document.createElement('input');
+			newBox.setAttribute('class', 'letter-control');
+			newBox.setAttribute('type', 'text');
+			newBox.setAttribute('id', 'l'+String(i));
+			newBox.setAttribute('name', 'l'+String(i));
+			newBox.setAttribute('onclick', 'boxClick(\'l'+String(i)+'\')');
+			newBox.setAttribute('oninput', 'boxInput(\'l'+String(i)+'\')');
+			newBox.setAttribute('required', '');
+			if (word[i] == ' ') newBox.disabled = true;
+			box.appendChild(newBox);
 		}
-		box.appendChild(temp);
 	}
 	
-	
-	function buttonInput(id) {
-		var next_id = 'l' + String((parseInt(id.substring(1))+1) % mx);
-		var next = document.getElementById(next_id);
-		if (next.disabled) {
-			buttonInput(next_id);
+	// Move to next open box on input
+	function boxInput(id) {
+		var depth = 0;
+		id = 'l' + String((parseInt(id.substring(1))+1) % n);
+		var next = document.getElementById(id);
+		while (next.disabled && depth < n+1) {
+			id = 'l' + String((parseInt(id.substring(1))+1) % n);
+			next = document.getElementById(id);
+			depth += 1;
 		}
+		if (next.disabled) return;
 		next.focus();
-	    next.select();
+		next.select();
 	}
 	
-	function buttonClick(id) {
+	// Highlight box text on click
+	function boxClick(id) {
 		document.getElementById(id).select();
 	}
 	
+	// Check if current word is valid
 	function checkWord() {
 		var valid = true;
 		for (let i = 0; i < word.length; i++) {
-			var temp = document.getElementById('l'+String(i));
-			if (temp.value.toUpperCase() === word[i].toUpperCase()) {
-				temp.disabled = true;
-				temp.style.color = "green";
-			} else {
-				valid = false;
-			}
+			var curBox = document.getElementById('l'+String(i));
+			let curChar = curBox.value.toUpperCase();
+			if (word[i].toUpperCase() == ' ') continue;
+			if (curChar === word[i].toUpperCase()) {
+				curBox.disabled = true;
+				curBox.style.color = "green";
+			} else valid = false;
+			
+			guessedLetters.add(curChar);
+			if (word.includes(curChar)) validLetters.add(curChar);
+			
 		}
-		if (valid) alert("You won!");
+		textGuessed.innerText = '';
+		textValid.innerText = '';
+		for (let letter of guessedLetters.values()) textGuessed.innerText += letter;
+		for (let letter of validLetters.values()) textValid.innerText += letter;
+		if (valid) {
+			alert("You won!");
+			newGame();
+		}
 	}
 	
+	// Enter key listener
+	document.onkeydown=function(evt){
+        var keyCode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+        if(keyCode == 13) {
+        	checkWord();
+        	boxInput('l'+String(n-1));
+        }
+    }
 </script>
 </html>
