@@ -14,13 +14,17 @@
 
 <body>
     <center>
-		<h1> Movie Title Guessing Game </h1>
-		<div id="input_boxes"></div> 
-		<h3> Guessed Letters: </h3>
-		<h4 id="guessed_letters"> None </h4>
-		<h3> Letters in Word: </h3>
-		<h4 id="valid_letters"> None </h4>
-		<input type="submit" onclick="checkWord()" value="Submit" id="submit_btn">
+    	<div class="game-area">
+			<h1> Movie Title Guessing Game </h1>
+			<div id="input_boxes"></div> 
+			<h3> Guessed Letters: </h3>
+			<h4 id="guessed_letters"> None </h4>
+			<h3> Letters in Word: </h3>
+			<h4 id="valid_letters"> None </h4>
+			<h3> Guesses </h3>
+			<h4 id="guesses"> 0 </h4>
+			<input class="game-submit" type="submit" onclick="checkWord()" value="Submit" id="submit_btn">
+		</div>
     </center>
   
 </body>
@@ -30,6 +34,7 @@
 	// DOM Elements
 	const textGuessed = document.getElementById('guessed_letters');
 	const textValid = document.getElementById('valid_letters');
+	const textGuesses = document.getElementById('guesses');
 	const box = document.getElementById('input_boxes');
     
 	// Game variables 
@@ -61,8 +66,9 @@
 		guessedLetters.clear();
 		validLetters.clear();
 		box.replaceChildren();
-		textGuessed.innerText = '';
-		textValid.innerText = '';
+		textGuessed.innerText = 'None';
+		textValid.innerText = 'None';
+		textGuesses.innerText = '0';
 		generateBoxes();
 	}
 	
@@ -105,6 +111,7 @@
 	// Check if current word is valid
 	function checkWord() {
 		var valid = true;
+		guesses++;
 		for (let i = 0; i < word.length; i++) {
 			var curBox = document.getElementById('l'+String(i));
 			let curChar = curBox.value.toUpperCase();
@@ -120,8 +127,10 @@
 		}
 		textGuessed.innerText = '';
 		textValid.innerText = '';
+		textGuesses.innerText = String(guesses);
 		for (let letter of guessedLetters.values()) textGuessed.innerText += letter;
 		for (let letter of validLetters.values()) textValid.innerText += letter;
+		if (textValid.innerText === '') textValid.innerText = 'None';
 		if (valid) {
 			alert("You won!");
 			newGame();
