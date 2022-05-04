@@ -7,6 +7,7 @@ router.get('/', controller.index);
 router.get('/about', controller.about);
 router.get('/contact', controller.contact);
 router.get('/game', controller.game);
+router.get('/dashboard', controller.dashboard);
 
 //Added part
 router.get('/showtimes', controller.showtimes)

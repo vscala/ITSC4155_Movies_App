@@ -12,10 +12,11 @@ const app = express();
 
 let port = 5050;
 let host = 'localhost';
+const url = 'mongodb+srv://admin1:password42@capstone.yjh0z.mongodb.net/demos?retryWrites=true&w=majority'
 app.set('view engine', 'ejs');
 
 //connect to database
-mongoose.connect('mongodb://localhost:27017/demos', 
+mongoose.connect(url, 
                 {useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     app.listen(port, host, ()=>{
@@ -30,7 +31,7 @@ app.use(
         secret: "ajfeirf90aeu9eroejfoefj",
         resave: false,
         saveUninitialized: false,
-        store: new MongoStore({mongoUrl: 'mongodb://localhost:27017/demos'}),
+        store: new MongoStore({mongoUrl: url}),
         cookie: {maxAge: 60*60*1000}
         })
 );

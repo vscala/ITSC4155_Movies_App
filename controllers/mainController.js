@@ -30,6 +30,10 @@ exports.game = (req, res) => {
     res.render('./game');
 };
 
+exports.dashboard = (req, res) => {
+    res.render('./dashboard');
+}
+
 exports.create = (req, res) => {
     /*let showtime = req.body;
     model.save(showtime);

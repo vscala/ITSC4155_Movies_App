@@ -79,18 +79,6 @@ exports.profile = (req, res, next)=>{
 
 };
 
-// exports.profile = (req, res, next)=>{
-//     let id = req.session.user;
-//     Promise.all([model.findById(id), Event.find({author: id})])
-//     .then(results=>{
-//         const [user, events] = results;
-//         res.render('./user/profile', {user, events});
-//     })
-//     .catch(err=>next(err));
-
-// };
-
-
 exports.logout = (req, res, next)=>{
     req.session.destroy(err=>{
         if(err) 
