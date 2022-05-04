@@ -19,11 +19,12 @@
 			<div id="input_boxes"></div> 
 			<h3> Guessed Letters: </h3>
 			<h4 id="guessed_letters"> None </h4>
-			<h3> Letters in Word: </h3>
+			<h3> Letters in Movie Title: </h3>
 			<h4 id="valid_letters"> None </h4>
 			<h3> Guesses </h3>
 			<h4 id="guesses"> 0 </h4>
 			<input class="game-submit" type="submit" onclick="checkWord()" value="Submit" id="submit_btn">
+			<input class="game-submit" type="submit" onclick="newGame()" value="New Game" id="submit_btn">
 		</div>
     </center>
   
@@ -133,7 +134,6 @@
 		if (textValid.innerText === '') textValid.innerText = 'None';
 		if (valid) {
 			alert("You won!");
-			newGame();
 		}
 	}
 	
