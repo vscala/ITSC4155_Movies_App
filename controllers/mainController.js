@@ -34,7 +34,7 @@ exports.dashboard = (req, res) => {
     res.render('./dashboard');
 }
 
-exports.create = (req, res) => {
+exports.create = (req, res, next) => {
     /*let showtime = req.body;
     model.save(showtime);
     res.redirect('/showtimes');*/
